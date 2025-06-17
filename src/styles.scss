@@ -22,7 +22,10 @@ body {
 }
 
 * {
-  font-family: myfont, myfont-ar;
+  font-family: Montserrat;
+  &:lang(ar) {
+    font-family: Montserrat;
+  }
 }
 
 .text-end {

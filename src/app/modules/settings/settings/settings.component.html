@@ -32,31 +32,31 @@
       </div>
 
       <div class="email">
-        <span class="material-symbols-outlined fill">Facebook_Link</span>
+        <span class="material-symbols-outlined fill">link</span>
         <span id="info">{{ row.facebookLink }}</span>
       </div>
       <div class="email">
-        <span class="material-symbols-outlined fill">Instagram_Link</span>
+        <span class="material-symbols-outlined fill">link</span>
         <span id="info">{{ row.instagramLink }}</span>
       </div>
-        <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
-          <div class="card__image">
-          <img (click)="showDialog(row.logo)"  [src]="row.logo" />
+      <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
+        <div class="img">
+          <img (click)="showDialog(row.logo)" [src]="row.logo" />
         </div>
       </div>
-    <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
-      <div class="card__image">
-        <img (click)="showDialog(row.backgroundImage)"  [src]="row.backgroundImage" />
+      <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
+        <div class="img">
+          <img (click)="showDialog(row.backgroundImage)" [src]="row.backgroundImage" />
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <button class="add-button" (click)="openDialog()">
     <span class="material-symbols-outlined">add</span>
   </button>
 
-   <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+  <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
     [resizable]="false">
     <img [src]="link" />
   </p-dialog>

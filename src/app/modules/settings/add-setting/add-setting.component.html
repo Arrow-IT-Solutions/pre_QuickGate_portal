@@ -56,12 +56,14 @@
             </div>
           </div>
           <div>
+            <label>{{ 'Logo_Image' | translate }}</label>
             <app-img-control (onSelected)="OnSelectFileLogo($event)" [fileInput]="fileInputLogo"></app-img-control>
             <small *ngIf="submitted && logo" class="error-validation">
               {{ "Field_Required" | translate }}
             </small>
           </div>
           <div>
+            <label>{{ 'Background_Image' | translate }}</label>
             <app-img-control (onSelected)="OnSelectFileBackground($event)" [fileInput]="fileInputBackground"></app-img-control>
             <small *ngIf="submitted && background" class="error-validation">
               {{ "Field_Required" | translate }}

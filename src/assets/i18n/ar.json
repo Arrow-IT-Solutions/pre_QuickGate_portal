@@ -232,8 +232,12 @@
   "icon_app" : "رمز التطبيق",
   "Create_App" : "إنشاء تطبيق",
   "Update_App" : "تحديث التطبيق",
-  "Basic_Info_App" : "المعلومات الأساسية للتطبيق"
-
-
+  "Basic_Info_App" : "المعلومات الأساسية للتطبيق",
+  "description_gate":"اهلا وسهلا بكم في مطعمنا",
+  "FoodMenue_gate":"قائمة الأطعمة",
+  "DrinkMenue_gate":"قائمة المشروبات والأركيلة",
+  "Feedback_gate":"آراؤكم",
+  "RateUs_gate":"تقييمات العملاء",
+  "FollowUs_gate":"تابعونا على حساباتنا"
 }
 

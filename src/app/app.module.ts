@@ -33,6 +33,7 @@ import { DisableElementDirective } from './Core/directive/disable-element.direct
 import { MatButtonModule } from '@angular/material/button';
 import { QRModule } from './modules/QR/qr.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

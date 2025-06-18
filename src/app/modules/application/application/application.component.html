@@ -48,7 +48,7 @@
       <div class="col-12 col-md-4 mb-4 d-flex" *ngFor="let row of data">
         <div class="card flex-fill">
           <div class="icon-container">
-            <img src="assets/images/icons8-option-30.png" alt="" />
+            <img (click)="showDialog(row.icon ?? '')" [src]="row.icon" />
           </div>
           <div class="card__contents">
             <div class="card__contents__item">
@@ -57,13 +57,6 @@
               </div>
             </div>
             <div class="card__contents__item">
-          <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
-            <div class="card__image">
-              <img (click)="showDialog(row.icon ?? '')"  [src]="row.icon" />
-            </div>
-          </div>
-            </div>
-           <div class="card__contents__item">
               <div class="card-label">
                 {{ row.url }}
               </div>
@@ -128,7 +121,7 @@
     </div>
   </ng-template>
 
-    <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+  <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
     [resizable]="false">
     <img [src]="link" />
   </p-dialog>

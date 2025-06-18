@@ -503,7 +503,7 @@
     .material-symbols-outlined{
      top: auto;
     }
-    
+
     &:hover {
       background-color: darken($primary-color-hover, 5%) !important;
     }
@@ -514,4 +514,25 @@
 }
 #icon_delete{
   color: $secoundary-color;
+}
+.employee_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+
+
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+  }
+
 }

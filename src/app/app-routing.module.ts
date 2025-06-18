@@ -4,23 +4,32 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { AuthGuardService } from './Core/guard/auth-guard.service';
 import { ContentLayoutAdminComponent } from './layout/content-layout-admin/content-layout-admin.component';
+import { GateComponent } from './modules/gate/gate/gate.component';
 
 
 const routes: Routes = [
+
   {
     path: '',
     redirectTo: '/auth/login',
     pathMatch: 'full',
   },
   {
-    path: 'forms/:uuid',
+    path: 'home',
     children: [{
       path: '',
       loadChildren: () =>
-        import('./modules/user-forms/user-forms.module').then(
-          (m) => m.UserFormsModule
+        import('./modules/gate/gate.module').then(
+          (m) => m.GateModule
         )
     }],
+  },
+  {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+    //import('./modules/gate/gate.module').then((m) => m.GateModule),
   },
   {
     path: 'layout-admin',
@@ -61,26 +70,7 @@ const routes: Routes = [
 
 
 
-
-  {
-    path: 'auth',
-    component: AuthLayoutComponent,
-    loadChildren: () =>
-      import('./modules/auth/auth.module').then((m) => m.AuthModule),
-  },
-
-
-
-  // {
-  //   path: 'segments',
-  //   component: AuthLayoutComponent,
-  //   loadChildren: () =>
-  //     import('./modules/segments/segments.module').then(
-  //       (m) => m.SegmentsModule
-  //     ),
-  // },
-  // Fallback when no prior routes is matched
-  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
 ];
 
 @NgModule({

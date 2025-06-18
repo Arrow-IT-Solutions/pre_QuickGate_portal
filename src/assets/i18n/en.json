@@ -1,5 +1,5 @@
 {
- "userName_forms":"Full Name",
+"userName_forms":"Full Name",
  "maritalStatus_forms":"Marital Status",
  "dateOfBirth_forms":"BirthDate",
  "phoneNumber_forms":"Phone Number",
@@ -232,6 +232,11 @@
  "icon_app" : "Application Icon",
  "Create_App" : "Create Application",
  "Update_App" : "Update Application",
- "Basic_Info_App" : "Basic Info Application"
-
+ "Basic_Info_App" : "Basic Info Application",
+ "description_gate":"Welcome to Restaurant Name & Cafe",
+ "FoodMenue_gate":"Food Menue",
+ "DrinkMenue_gate":"Drinks & Shisha Menu",
+ "Feedback_gate":"Feedback",
+ "RateUs_gate":"Rate Us",
+ "FollowUs_gate":"Follow Us"
 }

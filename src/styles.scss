@@ -22,7 +22,10 @@ body {
 }
 
 * {
-  font-family: myfont, myfont-ar;
+  font-family: IPM Plex sans arabic;
+  &:lang(ar) {
+    font-family: IPM Plex sans arabic;
+  }
 }
 
 .text-end {

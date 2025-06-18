@@ -8,13 +8,67 @@ import { GateComponent } from './modules/gate/gate/gate.component';
 
 
 const routes: Routes = [
- 
+
   {
     path: '',
-    component: GateComponent,
-    loadChildren: () =>
-      import('./modules/gate/gate.module').then((m) => m.GateModule),
+    redirectTo: '/auth/login',
+    pathMatch: 'full',
   },
+  {
+    path: 'home',
+    children: [{
+      path: '',
+      loadChildren: () =>
+        import('./modules/gate/gate.module').then(
+          (m) => m.GateModule
+        )
+    }],
+  },
+  {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+    //import('./modules/gate/gate.module').then((m) => m.GateModule),
+  },
+  {
+    path: 'layout-admin',
+    component: ContentLayoutAdminComponent,
+    // canActivate: [AuthGuardService],
+    children: [
+      {
+        path: 'employees',
+        loadChildren: () =>
+          import('./modules/employees/employees.module').then(
+            (m) => m.EmployeesModule
+          )
+      },
+      {
+        path: 'applications',
+        loadChildren: () =>
+          import('./modules/application/application.module').then(
+            (m) => m.ApplicationModule
+          )
+      },
+      {
+        path: 'password',
+        loadChildren: () =>
+          import('./modules/password/password.module').then(
+            (m) => m.PasswordModule
+          )
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('./modules/settings/settings.module').then(
+            (m) => m.SettingsModule
+          )
+      }
+
+    ]
+  },
+
+
 
   // { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
 ];

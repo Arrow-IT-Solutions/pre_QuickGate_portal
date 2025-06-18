@@ -14,11 +14,11 @@ export interface NavbarData {
 
 export const navbarData: NavbarData[] = [
   {
-    label: 'Forms',
-    labelar: 'النماذج',
-    id: 'forms',
+    label: 'Applications',
+    labelar: 'التطبيقات',
+    id: 'applications',
     icon: ' format_align_justify',
-    routeLink: "forms"
+    routeLink: "applications"
   },
   {
 

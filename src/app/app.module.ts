@@ -31,6 +31,7 @@ import { MainMenuAdminComponent } from './layout/content-layout-admin/pages/main
 import { HasPermissionDirective } from './Core/directive/has-permission.directive';
 import { DisableElementDirective } from './Core/directive/disable-element.directive';
 import { MatButtonModule } from '@angular/material/button';
+import { QRModule } from './modules/QR/qr.module';
 
 
 @NgModule({
@@ -50,7 +51,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     BrowserModule,
-    
+    QRModule,
     SharedModule,
     CommonModule,
     FormsModule,

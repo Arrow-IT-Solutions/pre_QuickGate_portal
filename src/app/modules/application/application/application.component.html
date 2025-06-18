@@ -20,7 +20,7 @@
                   <span class="p-input-icon-left p-0">
                     <i class="pi pi-search"></i>
                     <input class="search-field" type="text" (ngModelChange)="OnChange()"
-                      placeholder="{{ 'FormName_form' | translate }}" formControlName="name" pInputText />
+                      placeholder="{{ 'AppName_app' | translate }}" formControlName="name" pInputText />
                   </span>
                 </div>
               </div>
@@ -53,7 +53,19 @@
           <div class="card__contents">
             <div class="card__contents__item">
               <div class="card-label">
-                {{ row.formTranslations![layoutService.config.lang]?.name }}
+                {{ row.applictionTranslations![layoutService.config.lang]?.name }}
+              </div>
+            </div>
+            <div class="card__contents__item">
+          <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
+            <div class="card__image">
+              <img (click)="showDialog(row.icon ?? '')"  [src]="row.icon" />
+            </div>
+          </div>
+            </div>
+           <div class="card__contents__item">
+              <div class="card-label">
+                {{ row.url }}
               </div>
             </div>
           </div>
@@ -62,21 +74,21 @@
               <span class="material-symbols-outlined">more_vert</span>
             </div>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item (click)=" OpenQRDialog(row)">
+              <!-- <button mat-menu-item (click)=" OpenQRDialog(row)">
                 <span class="material-symbols-outlined">qr_code</span>
-                {{ 'ShowQR_Form' | translate }}
-              </button>
+                {{ 'ShowQR_App' | translate }}
+              </button> -->
               <button mat-menu-item (click)=" CopyLink(row)">
                 <span class="material-symbols-outlined" id="icon_edit">content_copy</span>
-                {{ 'CopyLink_Form' | translate }}
+                {{ 'CopyLink_App' | translate }}
               </button>
               <button mat-menu-item (click)="openAddForm(row)">
                 <span class="material-symbols-outlined" id="icon_edit">edit</span>
-                {{ 'Edit_Form' | translate }}
+                {{ 'Edit_App' | translate }}
               </button>
               <button mat-menu-item (click)="confirmDelete(row)">
                 <span class="material-symbols-outlined" id="icon_delete">delete</span>
-                {{ 'Delete_Form' | translate }}
+                {{ 'Delete_App' | translate }}
               </button>
             </mat-menu>
           </div>
@@ -86,7 +98,7 @@
 
     <div class="all d-flex">
       <div class="total">
-        {{ "totalForm_form" | translate }}:{{ totalRecords }}
+        {{ "totalApp_app" | translate }}:{{ totalRecords }}
       </div>
 
     </div>
@@ -115,6 +127,11 @@
       </div>
     </div>
   </ng-template>
+
+    <p-dialog header="Header" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false"
+    [resizable]="false">
+    <img [src]="link" />
+  </p-dialog>
 
   <p-confirmDialog #positionDialog key="positionDialog" position="bottom" [baseZIndex]="10000" onHide="true">
     <ng-template pTemplate="footer">

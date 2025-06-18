@@ -35,10 +35,10 @@ const routes: Routes = [
           )
       },
       {
-        path: 'forms',
+        path: 'applications',
         loadChildren: () =>
-          import('./modules/form/form.module').then(
-            (m) => m.FormModule
+          import('./modules/application/application.module').then(
+            (m) => m.ApplicationModule
           )
       },
       {

@@ -219,7 +219,21 @@
   "customerIsAgree_report":"الموافقة على إرسال الإعلانات",
   "customerEmail_report":"الإيميل",
   "totalReport_report":"مجموع التقارير",
-  "Question_report" : "السؤال"
+  "Question_report" : "السؤال",
+  "AppName_app" : "اسم التطبيق",
+  "Delete_App" : "حذف التطبيق",
+  "Edit_App" : "تعديل التطبيق",
+  "CopyLink_App" : "نسخ رابط التطبيق",
+  "ShowQR_App" : "عرض رمز الاستجابة السريعة",
+  "totalApp_app" : "مجموع التطبيقات",
+  "appAr_app" : "اسم التطبيق باللغة العربية",
+  "appEn_app" : "اسم التطبيق باللغة الإنجليزية",
+  "url_app" : "رابط التطبيق",
+  "icon_app" : "رمز التطبيق",
+  "Create_App" : "إنشاء تطبيق",
+  "Update_App" : "تحديث التطبيق",
+  "Basic_Info_App" : "المعلومات الأساسية للتطبيق"
+
 
 }
 

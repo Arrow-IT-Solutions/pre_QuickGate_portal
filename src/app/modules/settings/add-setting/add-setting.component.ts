@@ -16,20 +16,27 @@ export class AddSettingComponent {
   submitted: boolean = false;
   btnLoading: boolean = false;
   loading: boolean = false;
-  file: any;
-  fileInput: any
-  img: boolean = true;
+  fileLogo: any;
+  fileBackground: any;
+  fileInput: any;
+  fileInputLogo: any;
+  fileInputBackground: any;
+  logo: boolean = true;
+  background: boolean = true;
   constructor(public formBuilder: FormBuilder,
     public layoutService: LayoutService,
     public settingService: SettingsService,
     public messageService: MessageService
   ) {
     this.dataForm = this.formBuilder.group({
-      location: [''],
+      appUrl: [''],
       phone: [''],
-      email: [''],
       nameAr: [''],
       nameEn: [''],
+      subtitleAr: [''],
+      subtitleEn: [''],
+      facebookLink: [''],
+      instagramLink: ['']
 
     })
 
@@ -84,10 +91,14 @@ export class AddSettingComponent {
 
       var setting: SettingUpdateRequest = {
         uuid: this.settingService.SelectedData?.uuid?.toString(),
-        appURL: this.dataForm.controls['location'].value.toString(),
+        appURL: this.dataForm.controls['appUrl'].value.toString(),
         settingTranslation: settingTranslation,
         phone: this.dataForm.controls['phone'].value.toString(),
-        email: this.dataForm.controls['email'].value.toString(),
+        logo: this.fileLogo,
+        backgroundImage: this.fileBackground,
+        instagramLink: this.dataForm.controls['instagramLink'].value.toString(),
+        facebookLink: this.dataForm.controls['facebookLink'].value.toString()
+
 
       };
 
@@ -96,9 +107,14 @@ export class AddSettingComponent {
       // add
       var addsetting: SettingRequest = {
         settingTranslation: settingTranslation,
-        appURL: this.dataForm.controls['location'].value.toString(),
+        appURL: this.dataForm.controls['appUrl'].value.toString(),
         phone: this.dataForm.controls['phone'].value.toString(),
-        email: this.dataForm.controls['email'].value.toString(),
+        logo: this.fileLogo,
+        backgroundImage: this.fileBackground,
+        instagramLink: this.dataForm.controls['instagramLink'].value.toString(),
+        facebookLink: this.dataForm.controls['facebookLink'].value.toString()
+
+
       };
 
       console.log('add', addsetting)
@@ -125,17 +141,35 @@ export class AddSettingComponent {
 
   async FillData() {
     let temp = {
-      location: this.settingService.SelectedData?.appURL,
+      appUrl: this.settingService.SelectedData?.appURL,
       phone: this.settingService.SelectedData?.phone,
-      email: this.settingService.SelectedData?.email,
       nameAr: this.settingService.SelectedData?.settingTranslation!['ar'].name,
       nameEn: this.settingService.SelectedData?.settingTranslation!['en'].name,
+      subtitleAr: this.settingService.SelectedData?.settingTranslation!['ar'].subtitle,
+      subtitleEn: this.settingService.SelectedData?.settingTranslation!['en'].subtitle,
+      facebookLink: this.settingService.SelectedData?.facebookLink,
+      instagramLink: this.settingService.SelectedData?.instagramLink
     };
+    this.fileInputLogo = this.settingService.SelectedData?.logo,
+    this.logo = false
+    this.fileInputBackground = this.settingService.SelectedData?.backgroundImage,
+    this.background = false
+
     this.dataForm.patchValue(temp);
 
   }
 
   resetForm() {
     this.dataForm.reset();
+  }
+
+    OnSelectFileLogo(file) {
+    this.fileLogo = file;
+    this.logo = false;
+  }
+
+    OnSelectFileBackground(file) {
+    this.fileBackground = file;
+    this.background = false;
   }
 }

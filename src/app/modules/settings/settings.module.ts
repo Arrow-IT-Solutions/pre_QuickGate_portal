@@ -26,41 +26,54 @@ export interface SettingResponse extends ResponseBase {
   uuid?: string;
   settingTranslation?: { [key: string]: SettingTranslationResponse };
   phone: string,
-  email: string,
   appURL: string,
+  logo: string,
+  backgroundImage: string,
+  instagramLink: string,
+  facebookLink: string,
 }
 export interface SettingSearchRequest extends SearchRequestBase {
   uuid?: string;
   name?: string;
+  subtitle?: string;
 
 }
 export interface SettingUpdateRequest extends RequestBase {
   settingTranslation?: SettingTranslationRequest[];
   phone: string,
-  email: string,
   appURL: string,
+  logo: string,
+  backgroundImage: string,
+  instagramLink: string,
+  facebookLink: string,
 
 }
 
 export interface SettingRequest extends RequestBase {
   settingTranslation?: SettingTranslationRequest[];
   phone: string,
-  email: string,
   appURL: string,
+  logo: string,
+  backgroundImage: string,
+  instagramLink: string,
+  facebookLink: string,
 
 }
 
 export interface SettingTranslationResponse {
   uuid?: string;
   name?: string;
+  subtitle?: string;
   language?: string;
 }
 export interface SettingTranslationRequest {
   uuid?: string;
   name?: string;
+  subtitle?: string;
   language?: string;
 }
 export interface SettingTranslationUpdateRequest {
   uuid?: string;
   name?: string;
+  subtitle?: string;
 }

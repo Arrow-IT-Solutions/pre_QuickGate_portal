@@ -3,39 +3,41 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { LayoutService } from 'src/app/layout/service/layout.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { FormResponse, FormSearchRequest } from '../form.module';
-import { FormService } from 'src/app/layout/service/form.service';
-import { AddFormComponent } from '../add-form/add-form.component';
 import { SettingsService } from 'src/app/layout/service/settings.service';
 import { SettingResponse, SettingSearchRequest } from '../../settings/settings.module';
 import { MatDialog } from '@angular/material/dialog';
 import { QRCodeDialogComponent } from '../../QR/qrcode-dialog/qrcode-dialog.component';
+import { ApplicationResponse, ApplicationSearchRequest } from '../application.module';
+import { AddApplicationComponent } from '../add-application/add-application.component';
+import { ApplicationService } from 'src/app/layout/service/application.service';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+  selector: 'app-application',
+  templateUrl: './application.component.html',
+  styleUrls: ['./application.component.scss'],
   providers: [MessageService, ConfirmationService]
 })
-export class FormComponent {
+export class ApplicationComponent {
   dataForm!: FormGroup;
   loading = false;
   pageSize: number = 12;
   first: number = 0;
   totalRecords: number = 0;
-  data: FormResponse[] = [];
+  data: ApplicationResponse[] = [];
   formTotal: number = 0;
   doneTypingInterval = 1000;
   typingTimer: any;
   isResetting: boolean = false;
   appURL: string = '';
   setting: SettingResponse;
+  link = '';
+  visible: boolean = false;
   constructor(public formBuilder: FormBuilder,
     public layoutService: LayoutService,
     public translate: TranslateService,
     public messageService: MessageService,
     public confirmationService: ConfirmationService,
-    public formService: FormService,
+    public applicationService: ApplicationService,
     public settingService: SettingsService,
     private dialog: MatDialog
   ) {
@@ -44,7 +46,7 @@ export class FormComponent {
 
     })
 
-    this.formService.refreshForms$.subscribe(() => {
+    this.applicationService.refreshApplications$.subscribe(() => {
       this.FillData();
     });
   }
@@ -75,14 +77,14 @@ export class FormComponent {
     this.loading = true;
     this.data = [];
     this.formTotal = 0;
-    let filter: FormSearchRequest = {
+    let filter: ApplicationSearchRequest = {
       uuid: '',
       name: this.dataForm.controls['name'].value,
       pageIndex: pageIndex.toString(),
       pageSize: this.pageSize.toString(),
     };
 
-    const response = (await this.formService.Search(filter)) as any;
+    const response = (await this.applicationService.Search(filter)) as any;
     console.log('data', response)
     if (response.data == null || response.data.length == 0) {
       this.data = [];
@@ -97,16 +99,16 @@ export class FormComponent {
     this.loading = false;
 
   }
-  openAddForm(row: FormResponse | null = null) {
+  openAddForm(row: ApplicationResponse | null = null) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     document.body.style.overflow = 'hidden';
-    this.formService.SelectedData = row
-    let content = this.formService.SelectedData == null ? 'Create_Form' : 'Update_Form';
+    this.applicationService.SelectedData = row
+    let content = this.applicationService.SelectedData == null ? 'Create_App' : 'Update_App';
     this.translate.get(content).subscribe((res: string) => {
       content = res
     });
-    var component = this.layoutService.OpenDialog(AddFormComponent, content);
-    this.formService.Dialog = component;
+    var component = this.layoutService.OpenDialog(AddApplicationComponent, content);
+    this.applicationService.Dialog = component;
     component.OnClose.subscribe(() => {
       document.body.style.overflow = '';
       this.FillData();
@@ -136,7 +138,7 @@ export class FormComponent {
     }, this.doneTypingInterval);
   }
 
-  confirmDelete(row: FormResponse) {
+  confirmDelete(row: ApplicationResponse) {
 
     console.log(row)
     this.confirmationService.confirm({
@@ -146,7 +148,7 @@ export class FormComponent {
       key: 'positionDialog',
       closeOnEscape: true,
       accept: async () => {
-        const response = (await this.formService.Delete(row.uuid!)) as any;
+        const response = (await this.applicationService.Delete(row.uuid!)) as any;
 
         if (response?.requestStatus?.toString() == '200') {
           this.confirmationService.close();
@@ -165,12 +167,15 @@ export class FormComponent {
     });
   }
 
-  CopyLink(row: FormResponse | null = null) {
+  CopyLink(row: ApplicationResponse | null = null) {
     if (!row) {
       return;
     }
 
-    const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
+   // const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
+  // const linkToCopy = `${this.appURL}/#/application/${row.uuid}`;
+   //const linkToCopy = `${this.appURL}`;
+   const linkToCopy = `${row.url}`;
     navigator.clipboard
       .writeText(linkToCopy)
       .then(() => {
@@ -181,12 +186,14 @@ export class FormComponent {
       });
   }
 
-  OpenQRDialog(row: FormResponse) {
+  OpenQRDialog(row: ApplicationResponse) {
     if (!row) {
       return;
     }
-    this.formService.SelectedData = row;
-    const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
+    this.applicationService.SelectedData = row;
+  // const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
+   const linkToCopy = `${this.appURL}/#/application/${row.uuid}`;
+  // const linkToCopy = `${this.appURL}`;
     this.dialog.open(QRCodeDialogComponent, {
       data: linkToCopy,
       width: '300px',       // desired width
@@ -194,6 +201,11 @@ export class FormComponent {
       height: '500px',       // let it grow vertically as needed
       panelClass: 'qr-dialog' // optional: for any extra styling
     });
+  }
+
+    showDialog(link: string) {
+    this.link = link;
+    this.visible = true;
   }
 
 }

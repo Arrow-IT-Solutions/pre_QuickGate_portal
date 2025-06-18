@@ -219,5 +219,19 @@
  "customerIsAgree_report":"Agree to send offers",
  "customerEmail_report":"Email",
  "totalReport_report":"Total Reports",
- "Question_report" : "Question"
+ "Question_report" : "Question",
+ "AppName_app" : "Application Name",
+ "Delete_App" : "Delete Application",
+ "Edit_App" : "Edit Application",
+ "CopyLink_App" : "Copy Application Link",
+ "ShowQR_App" : "Show QR Code",
+ "totalApp_app" : "Total Applications",
+ "appAr_app" : "Application Name in Arabic",
+ "appEn_app" : "Application Name in English",
+ "url_app" : "Application URL",
+ "icon_app" : "Application Icon",
+ "Create_App" : "Create Application",
+ "Update_App" : "Update Application",
+ "Basic_Info_App" : "Basic Info Application"
+
 }

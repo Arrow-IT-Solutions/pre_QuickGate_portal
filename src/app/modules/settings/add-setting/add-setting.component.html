@@ -19,10 +19,22 @@
               <label>{{ 'NameEn_AddSettings' | translate }}</label>
             </div>
           </div>
+                    <div class="col-12 mb-3">
+            <div class="p-float-label">
+              <input pInputText type="text" formControlName="subtitleAr" />
+              <label>{{ 'SubtitleAr_AddSettings' | translate }}</label>
+            </div>
+          </div>
           <div class="col-12 mb-3">
             <div class="p-float-label">
-              <input pInputText type="text" formControlName="location" />
-              <label>{{ 'Location_AddSettings' | translate }}</label>
+              <input pInputText type="text" formControlName="subtitleEn" />
+              <label>{{ 'SubtitleEn_AddSettings' | translate }}</label>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <div class="p-float-label">
+              <input pInputText type="text" formControlName="appUrl" />
+              <label>{{ 'appUrl_AddSettings' | translate }}</label>
             </div>
           </div>
           <div class="col-12 mb-3">
@@ -33,9 +45,27 @@
           </div>
           <div class="col-12 mb-3">
             <div class="p-float-label">
-              <input pInputText type="text" formControlName="email" />
-              <label>{{ 'Email_AddSettings' | translate }}</label>
+              <input pInputText type="text" formControlName="facebookLink" />
+              <label>{{ 'FacebookLink_AddSettings' | translate }}</label>
             </div>
+          </div>
+          <div class="col-12 mb-3">
+            <div class="p-float-label">
+              <input pInputText type="text" formControlName="instagramLink" />
+              <label>{{ 'InstagramLink_AddSettings' | translate }}</label>
+            </div>
+          </div>
+          <div>
+            <app-img-control (onSelected)="OnSelectFileLogo($event)" [fileInput]="fileInputLogo"></app-img-control>
+            <small *ngIf="submitted && logo" class="error-validation">
+              {{ "Field_Required" | translate }}
+            </small>
+          </div>
+          <div>
+            <app-img-control (onSelected)="OnSelectFileBackground($event)" [fileInput]="fileInputBackground"></app-img-control>
+            <small *ngIf="submitted && background" class="error-validation">
+              {{ "Field_Required" | translate }}
+            </small>
           </div>
         </div>
       </div>

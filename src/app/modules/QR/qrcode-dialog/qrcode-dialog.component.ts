@@ -2,7 +2,7 @@ import { Component, Inject, AfterViewInit, ElementRef, ViewChild } from '@angula
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import QRCodeStyling, { Options } from 'qr-code-styling';
-import { FormService } from 'src/app/layout/service/form.service';
+import { ApplicationService } from 'src/app/layout/service/application.service';
 
 @Component({
   selector: 'app-qrcode-dialog',
@@ -18,7 +18,7 @@ export class QRCodeDialogComponent implements AfterViewInit {
   private qrCode!: QRCodeStyling;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: string,
-    public formService: FormService,
+    public applicationService: ApplicationService,
     public translate: TranslateService
   ) {
     // build an Options object
@@ -57,8 +57,8 @@ export class QRCodeDialogComponent implements AfterViewInit {
 
   ngOnInit() {
 
-    if (this.formService.SelectedData) {
-      this.header = this.formService.SelectedData.formTranslations!['en'].name + ' Form QR'
+    if (this.applicationService.SelectedData) {
+      this.header = this.applicationService.SelectedData.applictionTranslations!['en'].name + ' Application QR'
 
     }
 
@@ -69,7 +69,7 @@ export class QRCodeDialogComponent implements AfterViewInit {
   }
 
   download() {
-    let name = this.formService.SelectedData?.formTranslations!['en'].name
+    let name = this.applicationService.SelectedData?.applictionTranslations!['en'].name
     this.qrCode.download({ name: name + 'FormURL', extension: 'png' });
   }
 }

@@ -8,15 +8,37 @@ import { GateComponent } from './modules/gate/gate/gate.component';
 
 
 const routes: Routes = [
- 
+
   {
     path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
     component: GateComponent,
     loadChildren: () =>
       import('./modules/gate/gate.module').then((m) => m.GateModule),
   },
 
-  // { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
+  {
+    path: 'layout-admin',
+    component: ContentLayoutAdminComponent,
+    // canActivate: [AuthGuardService],
+    children: [
+
+
+    ]
+  },
+
+  {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  // Fallback when no prior routes is matched
+  { path: '**', redirectTo: '/auth/login', pathMatch: 'full' },
 ];
 
 @NgModule({

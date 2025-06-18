@@ -56,11 +56,11 @@
             </div>
 
             <div class="col result">
-      <div class="ms-2 mt-3">
-        <p-button class="reset-btn" (onClick)="resetform()">
-          <span class="material-symbols-outlined">restart_alt</span>
-        </p-button>
-      </div>
+              <div class="ms-2 mt-3">
+                <p-button class="reset-btn" (onClick)="resetform()">
+                  <span class="material-symbols-outlined">restart_alt</span>
+                </p-button>
+              </div>
             </div>
           </div>
         </ng-template>
@@ -75,7 +75,8 @@
           <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
             <div class="image-container">
               <div class="user-card__image employee_image">
-                <img *ngIf="row.image != null && row.image != ''; else char" (click)="showDialog(row.image)"  [src]="row.image" />
+                <img *ngIf="row.image != null && row.image != ''; else char" (click)="showDialog(row.image)"
+                  [src]="row.image" />
                 <ng-template #char>{{ getFirstChar(row.employeeTranslation) }}</ng-template>
               </div>
             </div>
@@ -105,10 +106,6 @@
             </div>
 
             <div class="card-section d-flex box3">
-              <div class="card__contents__item">
-                <div class="card-label">{{ 'contryCode' | translate }}</div>
-                <div class="card-info">{{row.user.countryCode}}</div>
-              </div>
               <div class="card__contents__item">
                 <div class="card-label">{{ 'employee-phone' | translate }}</div>
                 <div class="card-info">{{row.phone}}</div>

@@ -238,6 +238,14 @@
   "DrinkMenue_gate":"قائمة المشروبات والأركيلة",
   "Feedback_gate":"آراؤكم",
   "RateUs_gate":"تقييمات العملاء",
-  "FollowUs_gate":"تابعونا على حساباتنا"
+  "FollowUs_gate":"تابعونا على حساباتنا",
+  "SubtitleAr_AddSettings" : "العنوان بالعربية",
+  "SubtitleEn_AddSettings" : "العنوان بالانجليزية",
+  "appUrl_AddSettings" : "رابط الموقع",
+  "FacebookLink_AddSettings" : "رابط الفيسبوك",
+  "InstagramLink_AddSettings" : "رابط الانستاغرام",
+  "Logo_Image" : "اللوغو",
+  "Background_Image" : "صورة الخلفية",
+  "Subtitle_Setting" : "العنوان"
 }
 

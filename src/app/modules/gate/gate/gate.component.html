@@ -1,33 +1,18 @@
-<div class="gate_container">
-    <div class="translate_tool">
-        <button (click)="changeLang('ar')">Ar</button>
-        <button (click)="changeLang('en')">En</button>
+<div class="gate_container" [ngStyle]="{ 'background-image': 'url(' + setting.backgroundImage + ')' }">
+  <div class="translate_tool">
+    <button (click)="changeLang('ar')">Ar</button>
+    <button (click)="changeLang('en')">En</button>
+  </div>
+  <div class="logo_container">
+    <img [src]="setting.logo" class="logo">
+  </div>
+  <span id="description">{{setting.settingTranslation![layoutService.config.lang]?.subtitle}}</span>
+  <div class="options_wrapper">
+    <div class="options_container" *ngFor="let row of data">
+      <button (click)="Redirect(row)">
+        <img [src]="row.icon" class="icon">
+        <span>{{ row.applictionTranslations![layoutService.config.lang]?.name }}</span>
+      </button>
     </div>
-    <div class="logo_container">
-        <img src="../../../../assets/images/image (3).png" alt="">
-        <span>LoGo Type</span>
-    </div>
-    <span id="description">{{'description_gate' | translate}}</span>
-    <div class="options_container">
-        <button>
-            <img src="../../../../assets/images/fluent-emoji_pizza.png" alt="">
-            <span>{{'FoodMenue_gate' | translate}}</span>
-        </button>
-        <button>
-            <img src="../../../../assets/images/fluent-emoji_tropical-drink.png" alt="">
-            <span>{{'DrinkMenue_gate' | translate}}</span>
-        </button>
-        <button>
-            <img src="../../../../assets/images/iconamoon_comment-dots-fill.png" alt="">
-            <span>{{'Feedback_gate' | translate}}</span>
-        </button>
-        <button>
-            <img src="../../../../assets/images/iconoir_star-solid.png" alt="">
-            <span>{{'RateUs_gate' | translate}}</span>
-        </button>
-        <button>
-            <img src="../../../../assets/images/lets-icons_insta.png" alt="">
-            <span>{{'FollowUs_gate' | translate}}</span>
-        </button>
-    </div>
+  </div>
 </div>

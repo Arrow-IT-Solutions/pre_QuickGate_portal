@@ -16,7 +16,7 @@
         display: flex;
         align-content: center;
         align-items: center;
-        
+
         flex-wrap: wrap;
         font-size: $h5-size;
         padding-inline-start: 1rem;
@@ -24,8 +24,12 @@
         width: 100%;
         .logocontainer{
             width: 10rem;
+            height: 5rem;
             img{
-                width: 70%;
+              position: relative;
+                width: 50%;
+                height: 50%;
+                margin-top: 20px;
             }
         }
 

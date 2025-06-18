@@ -4,8 +4,8 @@ import { GateComponent } from './gate/gate.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:GateComponent
+    path: '',
+    component: GateComponent
   }
 ];
 

@@ -98,10 +98,8 @@ export class AddSettingComponent {
         backgroundImage: this.fileBackground,
         instagramLink: this.dataForm.controls['instagramLink'].value.toString(),
         facebookLink: this.dataForm.controls['facebookLink'].value.toString()
-
-
       };
-
+      console.log(setting)
       response = await this.settingService.Update(setting);
     } else {
       // add
@@ -151,9 +149,9 @@ export class AddSettingComponent {
       instagramLink: this.settingService.SelectedData?.instagramLink
     };
     this.fileInputLogo = this.settingService.SelectedData?.logo,
-    this.logo = false
+      this.logo = false
     this.fileInputBackground = this.settingService.SelectedData?.backgroundImage,
-    this.background = false
+      this.background = false
 
     this.dataForm.patchValue(temp);
 
@@ -163,12 +161,12 @@ export class AddSettingComponent {
     this.dataForm.reset();
   }
 
-    OnSelectFileLogo(file) {
+  OnSelectFileLogo(file) {
     this.fileLogo = file;
     this.logo = false;
   }
 
-    OnSelectFileBackground(file) {
+  OnSelectFileBackground(file) {
     this.fileBackground = file;
     this.background = false;
   }

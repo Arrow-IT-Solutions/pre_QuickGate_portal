@@ -238,5 +238,13 @@
  "DrinkMenue_gate":"Drinks & Shisha Menu",
  "Feedback_gate":"Feedback",
  "RateUs_gate":"Rate Us",
- "FollowUs_gate":"Follow Us"
+ "FollowUs_gate":"Follow Us",
+ "SubtitleAr_AddSettings" : "Subtitle in Arabic",
+ "SubtitleEn_AddSettings" : "Subtitle in English",
+ "appUrl_AddSettings" : "Application URL",
+ "FacebookLink_AddSettings" : "Facebook Link",
+ "InstagramLink_AddSettings" : "Instagram Link",
+ "Logo_Image" : "Logo",
+ "Background_Image" : "Background Image",
+ "Subtitle_Setting" : "Title"
 }

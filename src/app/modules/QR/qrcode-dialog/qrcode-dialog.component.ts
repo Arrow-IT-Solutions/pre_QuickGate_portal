@@ -26,8 +26,6 @@ export class QRCodeDialogComponent implements AfterViewInit {
       width: 300,
       height: 300,
       data: this.data,
-      image: '../../../../assets/images/LogoICON.svg',
-
       dotsOptions: {
         type: 'rounded',
         gradient: {
@@ -69,7 +67,7 @@ export class QRCodeDialogComponent implements AfterViewInit {
   }
 
   download() {
-    let name = this.applicationService.SelectedData?.applictionTranslations!['en'].name
-    this.qrCode.download({ name: name + 'FormURL', extension: 'png' });
+    let name = 'QuickGate'
+    this.qrCode.download({ name: name });
   }
 }

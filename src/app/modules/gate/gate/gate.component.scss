@@ -1,11 +1,14 @@
 
 .gate_container{
     width: 60%;
+    display: flex;
+      flex-direction: column;
     margin: auto;
-    background-image: url('../../../../assets/images/Rectangle\ 1\ \(1\).png');
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
@@ -64,7 +67,7 @@
             height: 10rem;
         }
         span{
-            
+
         }
     }
     #description{
@@ -121,4 +124,33 @@ color: #222222;
             }
         }
     }
+}
+
+.icon {
+  width: 24px;
+  /* make the image an icon */
+  height: 24px;
+  object-fit: contain;
+  /* preserve aspect ratio */
+  flex-shrink: 0;
+  /* don’t let it shrink */
+}
+.logo_container .logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* fill & crop evenly */
+  border-radius: 50%;
+  /* make it perfectly circular */
+}
+.options_wrapper {
+  /* take up all the leftover space under the logo/description */
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  /* space between rows */
+  padding-top: 1rem;
+  /* optional */
 }

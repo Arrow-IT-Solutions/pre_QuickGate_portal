@@ -49,6 +49,11 @@
           <img (click)="showDialog(row.backgroundImage)" [src]="row.backgroundImage" />
         </div>
       </div>
+      <div class="settings-card__qr-block">
+        <button class="settings-card__qr-download" (click)=" OpenQRDialog(row)">
+          {{ 'Show QR' | translate }}
+        </button>
+      </div>
     </div>
   </div>
 

@@ -53,7 +53,6 @@ export class ApplicationComponent {
 
   async ngOnInit() {
     await this.FillData();
-    await this.RetriveSettings()
   }
 
   async RetriveSettings() {
@@ -172,10 +171,10 @@ export class ApplicationComponent {
       return;
     }
 
-   // const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
-  // const linkToCopy = `${this.appURL}/#/application/${row.uuid}`;
-   //const linkToCopy = `${this.appURL}`;
-   const linkToCopy = `${row.url}`;
+    // const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
+    // const linkToCopy = `${this.appURL}/#/application/${row.uuid}`;
+    //const linkToCopy = `${this.appURL}`;
+    const linkToCopy = `${row.url}`;
     navigator.clipboard
       .writeText(linkToCopy)
       .then(() => {
@@ -191,9 +190,9 @@ export class ApplicationComponent {
       return;
     }
     this.applicationService.SelectedData = row;
-  // const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
-   const linkToCopy = `${this.appURL}/#/application/${row.uuid}`;
-  // const linkToCopy = `${this.appURL}`;
+    // const linkToCopy = `${this.appURL}/#/forms/${row.uuid}`;
+    const linkToCopy = `${this.appURL}/#/application/${row.uuid}`;
+    // const linkToCopy = `${this.appURL}`;
     this.dialog.open(QRCodeDialogComponent, {
       data: linkToCopy,
       width: '300px',       // desired width
@@ -203,7 +202,7 @@ export class ApplicationComponent {
     });
   }
 
-    showDialog(link: string) {
+  showDialog(link: string) {
     this.link = link;
     this.visible = true;
   }

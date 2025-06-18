@@ -108,7 +108,6 @@ export class AddEmployeeComponent {
       var employee: EmployeeUpdateRequest = {
         uuid: this.employeeService.SelectedData?.uuid?.toString(),
         employeeTranslation: clientTranslation,
-        countryCode: this.dataForm.controls['contryCode'].value,
         gender: this.dataForm.controls['clientGender'].value.toString(),
         birthDate: birthDate.toISOString(),
         phone: this.dataForm.controls['clientPhone'].value.toString(),
@@ -138,7 +137,6 @@ export class AddEmployeeComponent {
 
       var addEmployee: EmployeeRequest = {
         employeeTranslation: clientTranslation,
-        countryCode: this.dataForm.controls['contryCode'].value.toString(),
         gender: this.dataForm.controls['clientGender'].value.toString(),
         birthDate: birthDate.toISOString(),
         phone: this.dataForm.controls['clientPhone'].value.toString(),

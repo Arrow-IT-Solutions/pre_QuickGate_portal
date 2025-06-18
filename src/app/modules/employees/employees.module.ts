@@ -53,7 +53,6 @@ export interface EmployeeUpdateRequest extends RequestBase {
   profileImage?: string,
   phone?: string
   email?: string
-  countryCode: string,
 
 
 }
@@ -65,7 +64,6 @@ export interface EmployeeRequest extends RequestBase {
   birthDate?: string,
   email?: string,
   image?: string,
-  countryCode?: string,
 
 }
 

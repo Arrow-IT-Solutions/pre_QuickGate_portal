@@ -39,23 +39,32 @@
         <span class="material-symbols-outlined fill">link</span>
         <span id="info">{{ row.instagramLink }}</span>
       </div>
-      <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
+      <div class="col-lg-2 col-md-6 col-sm-6 image_container">
+        <span >{{ 'CompanyLogo_Setting' | translate }} :</span>
         <div class="img">
           <img (click)="showDialog(row.logo)" [src]="row.logo" />
         </div>
       </div>
-      <div class="col-lg-2 col-md-6 col-sm-6 d-flex card__left">
+      <div class="col-lg-2 col-md-6 col-sm-6 image_container">
+        <span >{{ 'backgroundImg_Setting' | translate }} :</span>
         <div class="img">
           <img (click)="showDialog(row.backgroundImage)" [src]="row.backgroundImage" />
+
         </div>
       </div>
-      <div class="settings-card__qr-block">
+      
+    </div>
+    <div class="icon_container">
+      <img src="../../../../assets/images/icons8-settings-120.png" alt="">
+  </div>
+  
+  </div>
+  <div class="settings-card__qr-block">
         <button class="settings-card__qr-download" (click)=" OpenQRDialog(row)">
           {{ 'Show QR' | translate }}
         </button>
       </div>
-    </div>
-  </div>
+  
 
   <button class="add-button" (click)="openDialog()">
     <span class="material-symbols-outlined">add</span>

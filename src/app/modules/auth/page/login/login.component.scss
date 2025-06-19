@@ -86,9 +86,7 @@
       width: 100%;
       text-align: center;
 
-      &:hover {
-        background-color: $primary-color-hover;
-      }
+      
     }
 
 
@@ -117,7 +115,7 @@
 
   & .right {
     height: 100vh;
-    background-color: $primary-color-hover;
+    background-color: $primary-color;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -148,7 +146,7 @@
     }
 
     & h3 {
-      color: $primary-color;
+      color: #FFFFFF;
       font-size: $h3-size;
     }
 

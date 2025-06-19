@@ -8,6 +8,7 @@ import { SettingsService } from 'src/app/layout/service/settings.service';
 import { AddSettingComponent } from '../add-setting/add-setting.component';
 import { MatDialog } from '@angular/material/dialog';
 import { QRCodeDialogComponent } from '../../QR/qrcode-dialog/qrcode-dialog.component';
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -142,10 +143,10 @@ export class SettingsComponent {
     const linkToCopy = row.appURL;
     this.dialog.open(QRCodeDialogComponent, {
       data: linkToCopy,
-      width: '300px',       // desired width
-      maxWidth: '90vw',     // never overflow the viewport
-      height: '500px',       // let it grow vertically as needed
-      panelClass: 'qr-dialog' // optional: for any extra styling
+      width: '300px',
+      maxWidth: '90vw',
+      height: '500px',
+      panelClass: 'qr-dialog'
     });
   }
 }

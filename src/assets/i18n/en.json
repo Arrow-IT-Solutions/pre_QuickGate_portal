@@ -246,5 +246,7 @@
  "InstagramLink_AddSettings" : "Instagram Link",
  "Logo_Image" : "Logo",
  "Background_Image" : "Background Image",
- "Subtitle_Setting" : "Title"
+ "Subtitle_Setting" : "Title",
+ "CompanyLogo_Setting":"Logo",
+ "backgroundImg_Setting":"Background Image"
 }

@@ -246,6 +246,8 @@
   "InstagramLink_AddSettings" : "رابط الانستاغرام",
   "Logo_Image" : "اللوغو",
   "Background_Image" : "صورة الخلفية",
-  "Subtitle_Setting" : "العنوان"
+  "Subtitle_Setting" : "العنوان",
+  "CompanyLogo_Setting":"اللوغو",
+  "backgroundImg_Setting":"صورة الخلفية"
 }
 

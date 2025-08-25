@@ -56,8 +56,12 @@ body {
 ////////shared styles\\\\\\\\\
 
 .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
   position: relative;
   top: 5px;
+}
+.material-symbols-outlined:lang(ar) {
+
 }
 
 //buttons

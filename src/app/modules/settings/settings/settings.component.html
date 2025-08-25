@@ -7,7 +7,7 @@
 
   <div class="container settings-info">
     <div class="row gy-3">
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="setting-item">
           <label class="setting-item__label">
             {{ 'CompanyName_Setting' | translate }}
@@ -17,7 +17,7 @@
           </span>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="setting-item">
           <label class="setting-item__label">
             {{ 'Subtitle_Setting' | translate }}
@@ -27,7 +27,7 @@
           </span>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="setting-item ">
           <label class="setting-item__label">
             {{ 'AppURL_Setting' | translate }}
@@ -35,19 +35,19 @@
           <span class="setting-item__value">{{ row.appURL }}</span>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="setting-item ">
           <i class="material-symbols-outlined">settings_phone</i>
           <span class="setting-item__value">{{ row.phone }}</span>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-lg-6 col-md-12 col-sm-6">
         <div class="setting-item ">
           <i class="material-symbols-outlined">link</i>
           <span class="setting-item__value">{{ row.facebookLink }}</span>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="setting-item">
           <i class="material-symbols-outlined">link</i>
           <span class="setting-item__value">{{ row.instagramLink }}</span>
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="row gy-3 mt-4">
-      <div class="col-6 col-md-4 col-lg-2">
+      <div class="col-12 col-md-12 col-lg-6">
         <div class="setting-item setting-item--image">
           <label class="setting-item__label">
             {{ 'CompanyLogo_Setting' | translate }}
@@ -63,7 +63,7 @@
           <img (click)="showDialog(row.logo)" [src]="row.logo" alt="Company Logo" class="img-fluid rounded" />
         </div>
       </div>
-      <div class="col-6 col-md-4 col-lg-2">
+      <div class="col-6 col-md-4 col-lg-6">
         <div class="setting-item setting-item--image">
           <label class="setting-item__label">
             {{ 'backgroundImg_Setting' | translate }}

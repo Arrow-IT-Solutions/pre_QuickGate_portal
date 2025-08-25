@@ -13,7 +13,7 @@
     margin-top: 2rem;
     font-family: myfont-bold, myfont-ar-bold;
     @media(max-width:767px){
-      width: 100%;
+      width: 50vh;
     }
 
 
@@ -41,12 +41,15 @@
         }
     }
         .settings-info {
-          padding: 1rem 0;
+          padding: 1rem 1rem;
         }
 
         .setting-item {
           display: flex;
           flex-direction: column;
+          @media(max-width:767px){
+           
+          }
         }
 
         .setting-item__label {
@@ -58,11 +61,14 @@
         .setting-item__value {
           font-size: 1rem;
           color: #333;
+          
         }
 
         .setting-item--icon {
           flex-direction: row;
           align-items: center;
+          margin-bottom: 0.25rem;
+
         }
 
         .setting-item--icon i {
@@ -75,6 +81,7 @@
           cursor: pointer;
           max-height: 100px;
           object-fit: contain;
+          width: 10rem;
         }
 
 }
@@ -107,6 +114,9 @@
     top: calc(100vh - 85px);
     right: 1.5rem;
     background-color: $primary-color;
+    @media(max-width:767px){
+      right: 2.5rem;
+    }
 
     &:lang(ar){
       right: unset;

@@ -78,10 +78,12 @@ export class AddSettingComponent {
     var settingTranslation = [
       {
         name: this.dataForm.controls['nameAr'].value.toString(),
+        subtitle: this.dataForm.controls['subtitleAr'].value.toString(),
         language: 'ar'
       },
       {
         name: this.dataForm.controls['nameEn'].value == null ? '' : this.dataForm.controls['nameEn'].value.toString(),
+        subtitle: this.dataForm.controls['subtitleEn'].value.toString(),
         language: 'en'
       }
     ];

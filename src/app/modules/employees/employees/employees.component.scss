@@ -171,6 +171,10 @@
 
       }
     }
+    @media(max-width:767px){
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   & .box-shadow {
@@ -422,7 +426,7 @@
 @media screen and (max-width: 990px) {
   .filter-title {
     width: 100% !important;
-    justify-content: start !important;
+    justify-content: center !important;
   }
 }
 .total {

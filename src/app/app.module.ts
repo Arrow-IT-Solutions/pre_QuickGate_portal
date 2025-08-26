@@ -80,11 +80,11 @@ export class AppModule implements OnInit {
     public layoutService: LayoutService,
     @Inject(DOCUMENT) private document: Document
   ) {
-    this.localService.GetStorge();
+    //this.localService.GetStorge();
 
-    this.translate.use(layoutService.config.lang);
+    //this.translate.use(layoutService.config.lang);
 
-    this.document.documentElement.lang = layoutService.config.lang;
+    //this.document.documentElement.lang = layoutService.config.lang;
 
   }
 

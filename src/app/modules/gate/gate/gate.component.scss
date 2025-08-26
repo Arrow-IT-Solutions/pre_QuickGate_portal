@@ -81,7 +81,7 @@ color: #FFF6E6;
 width: 50%;
 margin: auto;
 font-family: Montserrat;
- 
+
 @media(max-width:767px){
     width: 95%;
 }
@@ -95,7 +95,7 @@ font-family: Montserrat;
             font-size: 30px;
         }
     }
-   
+
     .options_container{
         display: flex;
         flex-direction: column;
@@ -151,7 +151,7 @@ color: #222222;
   border: none;
 //   object-fit: cover;
   /* fill & crop evenly */
- 
+
   /* make it perfectly circular */
 }
 .options_wrapper {
@@ -164,4 +164,12 @@ color: #222222;
   /* space between rows */
   padding-top: 1rem;
   /* optional */
+}
+#spinner {
+  margin: auto;
+  margin-top: 20%;
+
+  @media(max-width:767px) {
+    margin-top: 40%;
+  }
 }

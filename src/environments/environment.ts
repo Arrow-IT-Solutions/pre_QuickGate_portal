@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
 
-  baseApiUrl: "https://quickgate-api-dev.apps-jo.com"
+  baseApiUrl: "https://localhost:49240"
 
 };
 

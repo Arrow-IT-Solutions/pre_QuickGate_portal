@@ -30,8 +30,11 @@ export class GateComponent {
 
   async ngOnInit() {
     // this.checkCurrentLang();
+    this.loading = true;
     await this.FillData();
-    await this.RetriveSettings()
+    await this.RetriveSettings();
+    this.loading = false;
+
   }
 
   changeLang(lang: string) {
@@ -84,7 +87,6 @@ export class GateComponent {
 
     this.totalRecords = response.totalRecords;
 
-    this.loading = false;
 
   }
   //  checkCurrentLang() {
